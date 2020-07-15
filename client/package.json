@@ -5,10 +5,13 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
+    "generate": "nuxt build && nuxt export",
     "start": "nuxt start",
-    "export": "nuxt export",
     "serve": "nuxt serve",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build && nuxt export",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.11.0",
@@ -16,6 +19,7 @@
     "nuxt-vuex-localstorage": "^1.2.6"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.11.2"
+    "@nuxtjs/vuetify": "^1.11.2",
+    "push-dir": "^0.4.1"
   }
 }

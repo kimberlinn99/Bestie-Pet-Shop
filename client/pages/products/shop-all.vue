@@ -131,6 +131,9 @@ h1, h2{
 h1{
   margin-top: 40px;
 }
+.side-bar-col{
+  padding-left: 40px;
+}
 ::v-deep{
   .v-expansion-panel-content__wrap{
     padding: 0;

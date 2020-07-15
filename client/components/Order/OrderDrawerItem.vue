@@ -120,8 +120,5 @@ img{
   .grid-container{
     column-gap: 10px;
   }
-  .input-quantity{
-    width: 18%;
-  }
 }
 </style>

@@ -102,7 +102,8 @@ route.post('/log-in', (req, res, next) => {
           firstName: user.firstName, 
           lastName: user.lastName, 
           address: user.address, 
-          profileImage: user.profileImage
+          profileImage: user.profileImage,
+          phone: user.phone || ''
         }
       })
     })

@@ -1,5 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/Bestie-Pet-Shop/',
+    prefetchLinks: true,
+  }
+} : {}
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -30,9 +37,12 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  router: {
-    prefetchLinks: true
-  },
+  
+  ...routerBase,
+
+  // router: {
+  //   prefetchLinks: true
+  // }
   /*
   ** Global CSS
   */
