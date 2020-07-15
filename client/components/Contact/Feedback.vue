@@ -1,17 +1,4 @@
 <template>
-  <!-- <v-layout>
-    <v-row>
-      <v-col md="4" class="mt-2 message">
-        <h1>Throw us <br>
-        a question,
-        we promise
-        to fetch</h1>
-      </v-col>
-      <v-col md="8" class="feedback-form-container">
-        <feedback-form />
-      </v-col>
-    </v-row>
-  </v-layout> -->
   <v-layout row wrap>
     <v-flex md4  class="message">
       <h1>Throw us <br>
