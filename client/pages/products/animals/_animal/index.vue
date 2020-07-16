@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ animalProduct.animal.name }}</h1> 
-    <sort-by :animal="animalProduct.animal.type" :category="category" @selected="sortSelected"/>
+    <sort-by :animal="animalProduct.animal.type" :category="group" @selectedChoice="sortSelected"/>
     <v-layout>
       <v-row>
         <!-- Side bar -->
@@ -21,11 +21,11 @@
                     All
                   </p>
                   <p 
-                    v-for="category in animalProduct.category"
-                    :key="category.name"
-                    @click="filterCategory(category.name)"
+                    v-for="genre in animalProduct.category"
+                    :key="genre.name"
+                    @click="filterCategory(genre.name)"
                   >
-                    {{ category.title }}
+                    {{ genre.title }}
                   </p>
                 </v-expansion-panel-content>
               </v-expansion-panel>
@@ -74,7 +74,7 @@
 
 <script>
 import ProductCardContainer from '@/components/Product/ProductCardContainer'
-import SortBy from '@/components/Sortby'
+import SortBy from '@/components/SortBy'
 
 export default {
   components: {
@@ -87,7 +87,7 @@ export default {
       max: 200,
       range: [1, 200],
       animalType: '',
-      category: '',
+      group: '',
       sortMethod: ''
     }
   },
@@ -97,23 +97,23 @@ export default {
   },
   methods: {
     getAnimalProducts(){
-      this.category = ''
+      this.group = ''
       this.$store.dispatch('product/getAnimalProducts', this.animalType)
       this.filterPrice()
     },
-    filterCategory(category){
-      this.category = category
+    filterCategory(genreName){
+      this.group = genreName
       this.$store.dispatch('product/filterCategory', {
         animalType: this.animalType, 
-        category 
+        category: this.group 
       })
       this.filterPrice()
     },
     filterPrice(){
-      if(this.category != ''){
+      if(this.group != ''){
         this.$store.dispatch('product/filterPriceWithCategory', { 
           animalType: this.animalType,
-          category: this.category, 
+          category: this.group, 
           min: this.range[0], 
           max: this.range[1]
         })
@@ -129,10 +129,10 @@ export default {
     sortSelected(sortMethod){
       this.sortMethod = sortMethod
       if(sortMethod != ''){
-        if(this.category != ''){
+        if(this.group != ''){
         this.$store.dispatch('product/filterAll', { 
           animalType: this.animalType,
-          category: this.category,
+          category: this.group,
           sortMethod: this.sortMethod,
           min: this.range[0],
           max: this.range[1]

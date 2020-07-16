@@ -3,7 +3,7 @@
     <v-row justify="end">  
       <v-col md="2" class="sort-by-col">
         <label>
-          <select name="sort-by" id="sort-by" @change="selectSortMethod">
+          <select name="sort-method" id="sort-method" @change="selectSortMethod">
               <option value="sort-by" selected disabled>Sort by</option>
               <option value="newest">Newest</option>
               <option value="price-low-to-high">Price (Low to High)</option>
@@ -21,8 +21,8 @@
 export default {
   methods: {
     selectSortMethod(){
-      var sortMethod = document.getElementById("sort-by").value;
-      this.$emit('selected', sortMethod)
+      var sortMethod = document.getElementById("sort-method").value;
+      this.$emit('selectedChoice', sortMethod)
     }
   }
 }

@@ -23,7 +23,7 @@
   padding: 7px;
   border-radius: 50%;
   position: absolute;
-  margin-left: 200px;
+  margin-left: 225px;
 }
 .logo-text{
   text-align: center;
@@ -32,12 +32,22 @@
 .logo-text h2{
   line-height: 1.3rem;
 }
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 1024px){
+  .logo .v-icon{
+    margin-left: 150px;
+  }
+}
+@media only screen and (max-width: 768px){
   .logo, .logo-text{
     margin: 0;
   }
   .logo .v-icon{
-    margin-left: 70px;
+    margin-left: 80px;
+  }
+}
+@media only screen and (max-width: 400px){
+  .logo .v-icon{
+    margin-left: 40px;
   }
 }
 </style>

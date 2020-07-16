@@ -40,12 +40,16 @@ h1{
   margin: 50px;
 }
 .product-container{
-  margin-left: 20px;
+  margin-left: 110px;
 }
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 1024px){
   .product-container{
     margin-left: 0;
-    padding-right: 140px;
+  }
+}
+@media only screen and (max-width: 500px){
+  .product-container{
+    padding-right: 130px;
   }
 }
 </style>

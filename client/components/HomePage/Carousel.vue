@@ -41,14 +41,14 @@ export default {
       pets: [
         {
           title: 'carousel_pets',
-          src: require('../../assets/images/carousel_pets.jpg'),
+          src: require('../../assets/images/carousel_pet_resize.jpg'),
           description: 'Welcome to Our Pet Supply Shop',
           butttonText: 'Start Shopping',
           linkTo: '/products/shop-all'
         },
         {
           title: 'carousel_birds',
-          src: require('../../assets/images/carousel_birds.jpg'),
+          src: require('../../assets/images/carousel_bird_resize.jpg'),
           description: 'Hear the Birds Chirping',
           subDescription: '30% on our birds products',
           butttonText: 'Shop Now',
@@ -56,7 +56,7 @@ export default {
         },
         {
           title: 'carousel_kitten',
-          src: require('../../assets/images/carousel_cat.jpg'),
+          src: require('../../assets/images/carousel_cat_resize.jpg'),
           description: 'Play, Stretch, Sleep, Repeat',
           butttonText: 'Shop Cat Toys',
           linkTo: '/products/animals/cat'

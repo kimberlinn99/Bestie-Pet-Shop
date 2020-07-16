@@ -19,5 +19,6 @@
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",
     "push-dir": "^0.4.1"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
