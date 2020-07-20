@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "devStart": "nodemon index.js",
-    "client": "cd client && npm start",
-    "api": "cd server && nodemon index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
