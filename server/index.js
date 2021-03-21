@@ -4,22 +4,22 @@ if(process.env.NODE_ENV != 'production'){
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
 const cors = require('cors')
 const passport = require('passport')
 const flash = require('connect-flash')
-const path = require('path')
 const app = express()
+const connectDB = require('./config/database')
 
 // Connect to the database
-mongoose.connect(process.env.DB_URL, { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true,
-  useFindAndModify: false 
-});
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => console.log('Database is connected...'))
+connectDB()
+// mongoose.connect(process.env.DB_URL, { 
+//   useNewUrlParser: true, 
+//   useUnifiedTopology: true,
+//   useFindAndModify: false 
+// });
+// var db = mongoose.connection
+// db.on('error', console.error.bind(console, 'MongoDB connection error.'))
+// db.once('open', () => console.log('Database is connected...'))
 
 app.use(bodyParser.json())
 app.use(cors())

@@ -78,7 +78,7 @@ route.patch('/account/update/profile-image/:id', upload.single('profileImage'), 
       { _id: req.params.id },
       { profileImage: filePath })
     res.status(200).json({
-      message: "Upload your profile image",
+      message: "Updated your profile image",
       user: {
         id: user._id,
         email: user.email, 

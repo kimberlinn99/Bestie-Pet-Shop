@@ -6,10 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "serve": "nuxt serve",
-    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build && nuxt export",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "serve": "nuxt serve"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.11.0",
@@ -19,6 +16,5 @@
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",
     "push-dir": "^0.4.1"
-  },
-  "proxy": "http://localhost:8080"
+  }
 }
